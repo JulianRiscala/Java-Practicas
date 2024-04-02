@@ -28,7 +28,8 @@ public class UsoExcepcion {
 			Class.forName(driver);
 			
 			//establrzo la conexion
-			con = DriverManager.getConnection(url,usr,pwd);
+//			con = DriverManager.getConnection(url,usr,pwd);
+			con = UConnection.getConnection();
 			
 			//PARTE 2
 			System.out.println("Ingrese una opcion: ");
@@ -97,6 +98,9 @@ public class UsoExcepcion {
 			String sql = "INSERT INTO Usuario(PersonaID,Codigo,Nick,ClaseID)";
 			sql += " VALUES(?,?,?,?) ";
 			
+			//Seteo el autocommit en false
+			con.setAutoCommit(false);
+			
 			pstm = con.prepareStatement(sql);
 			//seteamos los valores.
 			System.out.println("Ingrese el ID de la persona: ");
@@ -110,11 +114,24 @@ public class UsoExcepcion {
 			
 			int rtdo = pstm.executeUpdate();
 			
-			if (rtdo == 1) System.out.println("Fila agregada"); else throw new RuntimeException("No se pudo insertar la fila");
+			//Con con.commit() seria todo ok.
+			if (rtdo == 1) con.commit(); else throw new RuntimeException("No se pudo insertar la fila");
 		} catch(Exception ex) {
 			ex.printStackTrace();
 			throw new RuntimeException(ex);
 		}
+		finally {
+			try {
+				//Este es el rollback por las dudas
+				if (con != null) con.rollback();
+				if (pstm!= null) pstm.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+				throw new RuntimeException(e);
+			}
+		}
+		
+		//Una vez cp,,oteada la transaccion, los cambios seran permanntes.
 	}
 	
 }
