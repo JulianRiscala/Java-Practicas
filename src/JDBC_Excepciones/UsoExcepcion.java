@@ -131,7 +131,7 @@ public class UsoExcepcion {
 			}
 		}
 		
-		//Una vez cp,,oteada la transaccion, los cambios seran permanntes.
+		//Una vez commiteada la transaccion, los cambios seran permanntes.
 	}
 	
 }
