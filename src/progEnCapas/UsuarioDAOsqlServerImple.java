@@ -1,4 +1,5 @@
 package progEnCapas;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,13 +8,9 @@ import java.util.Vector;
 
 import JDBC_Excepciones.UConnection;
 
-//La pasamos a una clase abstracta para (si es necesario) usarla con varias clases de datos
-public abstract class UsuarioDAO {
-	
-	public abstract Collection<UsuarioDTO> BuscarXPersonaSQLServer(int PersonaID);
-	//Con las clases abstractas, va a haber cambios en el facade.
-	
-	public Collection<UsuarioDTO> BuscarXPersona(int PersonaID){
+public class UsuarioDAOsqlServerImple extends UsuarioDAO {
+
+	public Collection<UsuarioDTO> BuscarXPersonaSQLServer(int PersonaID){
 		Connection con = null;
 		PreparedStatement pstm = null;
 		ResultSet rs = null;
@@ -58,4 +55,5 @@ public abstract class UsuarioDAO {
 			}
 		}
 	}
+	
 }
