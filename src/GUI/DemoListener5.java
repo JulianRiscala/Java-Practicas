@@ -35,7 +35,7 @@ public class DemoListener5 extends Frame {
 		
 		setSize(500,500);
 		setVisible(true);
-		
+		 
 		//El foco esta por defecto en el textfield
 		tfItem.requestFocus();
 	}
