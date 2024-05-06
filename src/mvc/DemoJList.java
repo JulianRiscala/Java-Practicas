@@ -20,12 +20,29 @@ public class DemoJList extends JFrame {
 		//El scrollPane agrega barras de scroll si es necesario
 		JScrollPane scrollLista = new JScrollPane(lista);
 		
-		content.add(scrollLista,BorderLayout.CENTER);
+		
+		//Aca vamos a armar la lista pero desde un Array
+		Object[] datos2 = _obtenerArrayDatos();
+		JList lista2 = new JList(new ArrayModel(datos2));
+		JScrollPane scrollLista2 = new JScrollPane(lista2);
+		
+		content.add(scrollLista,BorderLayout.WEST);
+		content.add(scrollLista2, BorderLayout.EAST);
 		
 		setSize(300, 300);
 		setVisible(true);
 	}
 	
+	private Object[] _obtenerArrayDatos() {
+		Object arr[] = {"Pappo",
+						"Spinetta",
+						"Charly",
+						"Luca Prodan",
+						"El loco Mason"};
+		
+		return arr;
+	}
+
 	private Vector<Object> _obtenerVectorDatos(){
 		Vector<Object> v = new Vector<Object>();
 		v.add("John Lennon");
@@ -43,6 +60,7 @@ public class DemoJList extends JFrame {
 		DemoJList j = new DemoJList();
 
 	}
+	
 }
 
 
