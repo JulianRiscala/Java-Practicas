@@ -20,6 +20,7 @@ public class UConnection {
 				
 				Class.forName(driver);
 				con = DriverManager.getConnection(url,usr,pwd);
+			//	con = DriverManager.getConnection("jdbc:sqlserver://JULIAN;databaseName=Prueba;IntegratedSecurity=true");
 			}
 			return con;
 		} catch (Exception e) {

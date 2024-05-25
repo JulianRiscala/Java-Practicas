@@ -1,0 +1,16 @@
+/.classpath
+/.gitattributes
+/.project
+/.settings/
+/GUI/
+/JDBC_Excepciones/
+/JavaFThreads/
+/Networking/
+/factory.properties
+/fecha/
+/interfaces/
+/jdbc.properties
+/module-info.class
+/mvc/
+/persona/
+/progEnCapas/

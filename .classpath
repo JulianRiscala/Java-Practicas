@@ -7,6 +7,6 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry excluding="src/" kind="src" path=""/>
-	<classpathentry kind="lib" path="C:/Users/julia/Downloads/sqljdbc_12.6/enu/jars/mssql-jdbc-12.6.1.jre8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/julia/OneDrive/Documentos/GitHub/Java-Practicas/sqljdbc_12.6/enu/jars/mssql-jdbc-12.6.2.jre11.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

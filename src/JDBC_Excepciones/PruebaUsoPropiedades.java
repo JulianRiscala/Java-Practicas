@@ -18,15 +18,15 @@ public class PruebaUsoPropiedades {
             System.out.println("Conexión establecida.");
 
             // Ejemplo de consulta
-            String sql = "SELECT * FROM Persona";
+            String sql = "SELECT * FROM ejemplo";
             preparedStatement = connection.prepareStatement(sql);
             resultSet = preparedStatement.executeQuery();
 
             // Procesamos el resultado
             while (resultSet.next()) {
                 // Suponiendo que mi_tabla tiene una columna llamada "nombre"
-                String nombre = resultSet.getString("Nombre");
-                System.out.println("Nombre: " + nombre);
+                String nombre = resultSet.getString("ID");
+                System.out.println("ID: " + nombre);
             }
         } catch (SQLException e) {
             e.printStackTrace();
