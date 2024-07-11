@@ -18,7 +18,7 @@ public class UsuarioDAOsqlServerImple extends UsuarioDAO {
 		try {
 			con = UConnection.getConnection();
 			
-			String sql = "SELECT ID, PersonaID, Codigo, Nick, ClaseID FROM Usuario WHERE PersonaID = ?";
+			String sql = "SELECT ID, PersonaID, Codigo, Nick, ClaseID FROM Usuarios WHERE PersonaID = ?";
 			
 			pstm = con.prepareStatement(sql);
 			pstm.setInt(1, PersonaID);

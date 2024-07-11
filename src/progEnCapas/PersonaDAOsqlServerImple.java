@@ -12,7 +12,8 @@ public class PersonaDAOsqlServerImple extends PersonaDAO {
 	// Aca van metodos donde las querys estan preparadas para usar solamente por sql server. Toda la funcionabilidad es igual.
 	
 	public String queryBuscarUltimaPersona() { //Entonces en cada implémentador tendriamos algo asi, para cada DAO existente.
-		String sql = "SELECT ID, Codigo, Nombre, Apellido, Edad, Email, Password FROM Persona ORDER BY ID DESC";
+		String sql = "SELECT ID, Codigo, Nombre, Apellido, Edad, Email, "
+				+ "Password FROM Personas ORDER BY ID DESC";
 		return sql;
 	}
 	
@@ -24,7 +25,7 @@ public class PersonaDAOsqlServerImple extends PersonaDAO {
 		try {
 			con = UConnection.getConnection();
 			
-			String sql = "SELECT ID, Codigo, Nombre, Apellido, Edad, Email, Password FROM Persona"; /* ESTA ES LA UNICA LINEA QUE DEBE CAMBIAR ENTRE BASE DE DATOS */
+			String sql = "SELECT ID, Codigo, Nombre, Apellido, Edad, Email, Password FROM Personas"; /* ESTA ES LA UNICA LINEA QUE DEBE CAMBIAR ENTRE BASE DE DATOS */
 			
 			pstm = con.prepareStatement(sql);
 			
