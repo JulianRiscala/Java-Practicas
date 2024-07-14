@@ -55,8 +55,8 @@ public class PersonaDTO {
 	}
 	
 	public String toString() {
-		return "ID = " + ID + ", Codigo = " + Codigo + ", Nombre = " + Nombre + ", Apellido = " + Apellido
-				+ ", Edad = " + Edad + ", Email = " + Email + ", Password = " + Password;
+		return ID + "," + Codigo + "," + Nombre + "," + Apellido
+				+ "," + Edad + "," + Email + "," + Password;
 	}
 	
 }

@@ -72,7 +72,7 @@ public abstract class PersonaDAO {
 		try {
 			con = UConnection.getConnection();
 			
-			String sql = "SELECT ID, Codigo, Nombre, Apellido, Edad, Email, Password FROM Persona";
+			String sql = "SELECT ID, Codigo, Nombre, Apellido, Edad, Email, Password FROM Personas";
 			
 			pstm = con.prepareStatement(sql);
 			
@@ -87,6 +87,7 @@ public abstract class PersonaDAO {
 				Persona.setID(rs.getInt("ID"));
 				Persona.setCodigo(rs.getString("Codigo"));
 				Persona.setNombre(rs.getString("Nombre"));
+				Persona.setApellido(rs.getString("Apellido"));
 				Persona.setEdad(rs.getInt("Edad"));
 				Persona.setEmail(rs.getString("Email"));
 				Persona.setPassword(rs.getString("Password"));

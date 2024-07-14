@@ -40,7 +40,7 @@ public class UsuarioDTO {
 	}
 	@Override
 	public String toString() {
-		return "Codigo = " + Codigo + ", Nick = " + Nick + ", ClaseID = " + ClaseID;
+		return Codigo + "," + Nick + "," + ClaseID;
 	}
 	
 }

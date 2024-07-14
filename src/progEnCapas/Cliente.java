@@ -5,6 +5,7 @@ import java.util.*;
 public class Cliente {
 
 	public static void main(String[] args) {
+		
 		//Con el facade terminado, programamos el cliente. Todo el procesamiento de datos lo hace el facade, el Cliente se encarga de tomar y mostrar datos.
 		Facade facade = new Facade();
 		Collection<PersonaDTO> collPersonas = facade.obtenerPersonas();
