@@ -1,13 +1,16 @@
 package progEnCapas;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.Scanner;
 
-public class Cliente {
+public class ClienteTCP {
 
 	public static void main(String[] args) {
 		
-		//Con el facade terminado, programamos el cliente. Todo el procesamiento de datos lo hace el facade, el Cliente se encarga de tomar y mostrar datos.
-		FacadeLocalImple facade = new FacadeLocalImple();
+		//Este ejemplo de Cliente vamos a hacerlo siguiendo con la interfaz Facade, el programa Cliente literal no se como va  aquedar a partir de aca...
+		
+		// PAG (260) Como ahora tenemos una interfaz Facade, la instanciamos a traves del factory method
+		Facade facade = (Facade)UFactory.GetInstancia("FACADE");
 		Collection<PersonaDTO> collPersonas = facade.obtenerPersonas();
 		
 		//Muestro las peronas
@@ -23,10 +26,10 @@ public class Cliente {
 		_mostrarUsuarios(collUsuarios);
 	}
 	
-	private static void _mostrarPersonas(Collection<PersonaDTO> collPersonas) {
+	private static void _mostrarPersonas(Collection<PersonaDTO> collPersonasLocal) {
 		System.out.println("Personas registradas: ");
 		System.out.println("--------------------------------------------->");
-		for(PersonaDTO per: collPersonas) {
+		for(PersonaDTO per: collPersonasLocal) {
 			System.out.println(per.toString());
 		}
 		System.out.println("<---------------------------------------------");
@@ -43,5 +46,4 @@ public class Cliente {
 			System.out.println("<---------------------------------------------");
 		} else System.out.println("No tiene usuarios.");
 	}
-	
 }

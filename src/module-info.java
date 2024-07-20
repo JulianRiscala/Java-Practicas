@@ -9,4 +9,5 @@ module Practicas {
 	requires java.management;
 	requires java.desktop;
 	requires java.rmi;
+	exports progEnCapasRMI;
 }
