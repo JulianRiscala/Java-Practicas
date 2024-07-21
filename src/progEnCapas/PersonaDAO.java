@@ -70,7 +70,9 @@ public abstract class PersonaDAO {
 		ResultSet rs = null;
 		
 		try {
-			con = UConnection.getConnection();
+			//con = UConnection.getConnection();
+			//Implementamos el connectionPool reemplazando la instancia de la variable con. Y el finally devuelve la conexion para usarla en otro hilo que lo requiera
+			con = ConnectionPool.getPool().getConnection();
 			
 			String sql = "SELECT ID, Codigo, Nombre, Apellido, Edad, Email, Password FROM Personas";
 			
@@ -104,6 +106,11 @@ public abstract class PersonaDAO {
 			try {
 				if ( rs != null ) rs.close();
 				if ( pstm != null ) pstm.close();
+				
+				//Devuelvo la conexion al pool
+				if (con != null ) {
+					ConnectionPool.getPool().releaseConnection(con);
+				}
 			} catch (Exception e2) {
 				e2.printStackTrace();
 				throw new RuntimeException(e2);
